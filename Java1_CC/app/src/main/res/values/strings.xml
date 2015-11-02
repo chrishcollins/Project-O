@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Java1_CC</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="enter_band">Enter Band Name</string>
+    <string name="total_bands">Total Bands</string>
+    <string name="avg_bands">Average Length</string>
+    <string name="band_num">Enter Band Number</string>
+    <string name="singBand">Single Band</string>
+    <string name="save_button">Save</string>
+    <string name="show_button">Show Bands</string>
+</resources>
