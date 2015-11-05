@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -60,6 +61,7 @@ public class MainActivity extends Activity {
                         final AlertDialog singleBand = new AlertDialog.Builder(mContext).create();
                         singleBand.setTitle("Selected Band");
                         singleBand.setMessage(mBands.get(id - 1));
+                        singleBand.setIcon(R.drawable.guitar_s);
                         singleBand.setButton(AlertDialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -67,9 +69,18 @@ public class MainActivity extends Activity {
                             }
                         });
                         singleBand.show();
+                        final EditText numberInput = (EditText) findViewById(R.id.bandNum);
+
+                        numberInput.setText("");
+
                     }
+                } else {
+                    Toast.makeText(getBaseContext(), " Enter a band number.", Toast.LENGTH_LONG).show();
+
                 }
+
             }
+
         });
 
 
@@ -81,7 +92,7 @@ public class MainActivity extends Activity {
 
                 if (getInput.equals("")) {
                     AlertDialog.Builder bandSaved = new AlertDialog.Builder(mContext);
-                    bandSaved.setMessage("Great, new band saved!");
+                    bandSaved.setMessage("Come on, enter a band name!");
                     bandSaved.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -89,6 +100,7 @@ public class MainActivity extends Activity {
                         }
                     });
                     bandSaved.setTitle("Alert");
+                    bandSaved.setIcon(R.drawable.guitar_s);
                     bandSaved.create();
                     bandSaved.show();
 
@@ -97,13 +109,14 @@ public class MainActivity extends Activity {
 
                             AlertDialog.Builder bandsSaved = new AlertDialog.Builder(mContext);
                             bandsSaved.setMessage("Can't enter duplicate bands.");
-                            bandsSaved.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                            bandsSaved.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
                                 }
                             });
                             bandsSaved.setTitle("Alert");
+                            bandsSaved.setIcon(R.drawable.guitar_s);
                             bandsSaved.create();
                             bandsSaved.show();
                         } else {
@@ -111,8 +124,12 @@ public class MainActivity extends Activity {
                             mTotalBands.setText("Total Number of Bands: " + mBands.size());
                             mAvgBands.setText("Average Length: " + Float.toString(getAverage()));
                             getAverage();
+                            final EditText editTextPlainTextInput = (EditText) findViewById(R.id.enterBand);
 
+                            editTextPlainTextInput.setText("");
                     }
+                    Toast.makeText(getBaseContext(), getInput + " has been added to your bands list.", Toast.LENGTH_LONG).show();
+
                 }
             }
         }));
@@ -132,6 +149,7 @@ public class MainActivity extends Activity {
 
                 }
                 viewArrayList.setMessage(cntBands);
+                viewArrayList.setIcon(R.drawable.guitar_s);
                 viewArrayList.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
                     @Override
