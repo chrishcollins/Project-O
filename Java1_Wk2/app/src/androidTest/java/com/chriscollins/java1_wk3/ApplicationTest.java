@@ -1,4 +1,4 @@
-package com.chriscollins.java1_wk2;
+package com.chriscollins.java1_wk3;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
