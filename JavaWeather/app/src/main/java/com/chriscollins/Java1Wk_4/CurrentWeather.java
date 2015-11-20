@@ -1,13 +1,13 @@
-package com.chriscollins.java1_wk4;
-
+package com.chriscollins.Java1Wk_4;
+/**
+ * Created by chriscollins on 11/17/15.
+ */
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-/**
- * Created by chriscollins on 11/17/15.
- */
-public class Weather {
+
+public class CurrentWeather {
     private String mIcon;
     private long mTime;
     private double mTemperature;
@@ -24,14 +24,6 @@ public class Weather {
         mTimeZone = timeZone;
     }
 
-    public String getIcon() {
-        return mIcon;
-    }
-
-    public void setIcon(String icon) {
-        mIcon = icon;
-    }
-
 
     public long getTime() {
         return mTime;
@@ -46,9 +38,6 @@ public class Weather {
         return timeString;
     }
 
-    public void setTime(long time) {
-        mTime = time;
-    }
 
     public int getTemperature() {
         return (int)Math.round(mTemperature);
@@ -56,14 +45,6 @@ public class Weather {
 
     public void setTemperature(double temperature) {
         mTemperature = temperature;
-    }
-
-    public double getHumidity() {
-        return mHumidity;
-    }
-
-    public void setHumidity(double humidity) {
-        mHumidity = humidity;
     }
 
     public int getPrecipChance() {

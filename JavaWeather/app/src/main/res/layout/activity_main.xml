@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                tools:context=".MainActivity"
+                android:background="@drawable/mountain">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--"
+        android:id="@+id/currentDegree"
+        android:textColor="@android:color/white"
+        android:textSize="150sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/currentDegree"
+        android:layout_marginTop="10dp"
+        android:weightSum="100"
+        android:id="@+id/linearLayout"
+        android:layout_toLeftOf="@+id/currentDegree"
+        android:layout_toStartOf="@+id/currentDegree">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="26.38">
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Getting current weather..."
+        android:id="@+id/tomorrowsWeather"
+        android:textColor="@android:color/white"
+        android:textSize="18dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/currentDegree"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--"
+        android:id="@+id/chanceRain"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/precipLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/currentDegree"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chance of Rain"
+        android:id="@+id/precipLabel"
+        android:textColor="#ffffff"
+        android:gravity="center_horizontal"
+        android:textSize="15sp"
+        android:layout_below="@+id/tomorrowsWeather"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="o"
+        android:id="@+id/degreesymbol"
+        android:layout_below="@+id/progressBar"
+        android:layout_toRightOf="@+id/currentDegree"
+        android:layout_toEndOf="@+id/currentDegree"
+        android:textStyle="bold"
+        android:textColor="#b0ffffff"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:id="@+id/refresh_btn"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#a8000000"
+        android:textColor="#ffffff"
+        android:alpha=".5"
+        style="@style/Widget.AppCompat.Light.ActionButton"
+        android:textColorHighlight="#5cb3fa"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Latitude"
+        android:layout_above="@+id/progressBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/currentDegree"
+        android:layout_toStartOf="@+id/currentDegree"
+        android:hint="Latitude"
+        android:textColor="#ffffff"
+        android:textColorHint="#92e2fb"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Longitude"
+        android:layout_above="@+id/progressBar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/degreesymbol"
+        android:layout_toEndOf="@+id/degreesymbol"
+        android:hint="Longitude"
+        android:textColor="#ffffff"
+        android:textColorHint="#92e2fb"/>
+
+</RelativeLayout>
